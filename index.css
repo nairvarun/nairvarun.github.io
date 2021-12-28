@@ -4,15 +4,10 @@ body {
 	margin: 40px
 }
 
-#gitlab, #gitlab_link, #email, #email_address, #github, #github_link {
+#name, #redirect, #name:hover + #redirect, #redirect:hover {
 	display: inline;
 }
 
-#gitlab_link, #github_link, #email_address {
+#redirect {
 	display: none;
 }
-
-#gitlab:hover + #gitlab_link, #github:hover + #github_link, #email:hover + #email_address, #gitlab_link:hover, #github_link:hover, #email_address:hover {
-	display: inline;
-}
-
