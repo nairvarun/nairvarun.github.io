@@ -1,13 +1,22 @@
+/* https://codepen.io/Mamboleoo/pen/poyeymr */
+/* https://codepen.io/chris_tudor/pen/OJPeQgb */
+
+
 body {
-	font-family: monospace;
-	background-color: #eee;
-	margin: 40px
+	/* f!ont-family:  */
+	/*background-color: rgba(238, 238, 238, 1);*/
+	background-color: rgba(253, 255, 234, 1);
 }
 
-#name, #redirect, #name:hover + #redirect, #redirect:hover {
-	display: inline;
+#box {
+	font-family: "Droid Sans Mono", monospace;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
-#redirect {
-	display: none;
+textarea{
+	border: 1px solid black;
+	cursor: help;
 }
