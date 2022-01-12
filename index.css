@@ -1,13 +1,93 @@
-body {
-	font-family: monospace;
-	background-color: #eee;
-	margin: 40px
+@import url('http://fonts.cdnfonts.com/css/common-pixel');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+::-webkit-scrollbar {
+	width: 15px;
+}
+  
+  ::-webkit-scrollbar-track {
+	background: rgba(153, 153, 76, 1);
+	border: 2px solid black;	
+}
+  
+  ::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 234, 1);
+	border: 2px solid black;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 234, 1);
 }
 
-#name, #redirect, #name:hover + #redirect, #redirect:hover {
+::-moz-selection { /* Code for Firefox */
+	background: rgba(238, 238, 158, 1);
+}
+  
+  ::selection {
+	background: rgba(238, 238, 158, 1);
+}
+
+/* TODO: add better class and id names */
+html {
+	cursor: url('./media/cursor3.png'), auto;
+	border: 4px solid rgba(85, 170, 170, 1);
+}
+
+body {
+	min-height: 100vh;
+	/* font-family: 'Common Pixel', sans-serif; */
+	font-family: 'VT323', monospace;
+	font-size: 25px;
+	background-color: rgba(253, 255, 234, 1);    
+	margin: 0;
+	padding: 0;
+	/* overflow: hidden; */
+}
+
+a {
+	color: black;
+	cursor: url('./media/cursor3.png'), auto;
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: rgba(0, 105, 0, 1);
+	color: rgba(253, 255, 234, 1);
+}
+
+.heading {
+	background-color: rgba(234, 255, 255, 1);
+	border-top: solid rgba(0, 0, 0, 1);
+	border-bottom: solid rgba(0, 0, 0, 1);
+	border-right: solid rgba(0, 0, 0, 1);
+}
+
+#heading__name, #heading__box {
 	display: inline;
 }
 
-#redirect {
-	display: none;
+#heading__box {
+	background-color: rgba(136, 136, 204, 1);
+	border: solid rgba(0, 0, 0, 1);
+	padding-left: 10px;
+	padding-right: 10px;
 }
+
+#heading__name {
+	padding-left: 5px;
+}
+
+.content {
+	padding-left: 25px;
+}
+
+/* .content__link {
+	padding-left: 25px;
+	padding-right: 25px;
+	display: inline;
+} */
+
+/* 
+.content__link:hover::after {
+	content: attr(data-redirect);
+} */
