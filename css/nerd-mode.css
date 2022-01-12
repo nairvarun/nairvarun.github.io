@@ -23,14 +23,13 @@
 	background: rgba(238, 238, 158, 1);
 }
   
-::selection {
+  ::selection {
 	background: rgba(238, 238, 158, 1);
 }
 
 /* TODO: add better class and id names */
 html {
-	/* .cru??? */
-	cursor: url('./media/cursor3.png'), auto;
+	cursor: url('../media/cursor3.png'), auto;
 	border: 4px solid rgba(85, 170, 170, 1);
 }
 
@@ -45,7 +44,7 @@ body {
 	/* overflow: hidden; */
 }
 
-a {
+/* a {
 	color: black;
 	cursor: url('./media/cursor3.png'), auto;
 	text-decoration: none;
@@ -54,7 +53,7 @@ a {
 a:hover {
 	background-color: rgba(0, 105, 0, 1);
 	color: rgba(253, 255, 234, 1);
-}
+} */
 
 .heading {
 	background-color: rgba(234, 255, 255, 1);
@@ -82,6 +81,32 @@ a:hover {
 	padding-left: 5px;
 }
 
-.content {
+/* .content {
 	padding-left: 25px;
+} */
+
+.term {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#term__term {
+    border: 3px solid rgba(87, 168, 168, 1);
+	font-family: 'VT323', monospace;
+	font-size: 20px;
+    padding-left: 10px;
+	text-decoration: none;
+	cursor: url('../media/cursor3.png'), auto;
+    resize: none;
+}
+
+#term__term:focus {
+    outline: none;
+}
+
+#term__term::selection {
+    background-color: rgba(0, 105, 0, 1);
+	color: rgba(255, 255, 255, 1);
 }
