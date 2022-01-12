@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // TODO: add more p9 like features
     // text selection stuff
     // custom context menu
@@ -11,4 +9,3 @@ document.getElementById('email-redirect').addEventListener('click', () => {
         window.location.href = "mailto:nairvarun@pm.me";
     }
 });
->>>>>>> new
