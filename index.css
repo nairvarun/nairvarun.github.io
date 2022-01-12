@@ -1,22 +1,48 @@
 /* https://codepen.io/Mamboleoo/pen/poyeymr */
 /* https://codepen.io/chris_tudor/pen/OJPeQgb */
 
+/* width */
+::-webkit-scrollbar {
+	width: 15px;
+}
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: rgba(153, 153, 76, 1);
+	border: 2px solid black;	
+}
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 234, 1);
+	border: 2px solid black;
+}
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 234, 1);
+}
+
+html {
+	cursor: url('./media/cursor3.png'), auto;
+}
 
 body {
 	/* f!ont-family:  */
 	/*background-color: rgba(238, 238, 238, 1);*/
+	min-height: 100vh;
 	background-color: rgba(253, 255, 234, 1);
 }
 
 #box {
 	font-family: "Droid Sans Mono", monospace;
 	position: absolute;
-	top: 50%;
+	top:  50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
 
 textarea{
+	resize: none;
 	border: 1px solid black;
-	cursor: help;
 }
