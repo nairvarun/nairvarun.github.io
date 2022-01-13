@@ -1,0 +1,58 @@
+{
+    "src": {
+        "html": {
+            "index": {
+                "path": "index.html",
+                "root": "./"
+            },
+            "nerdMode": {
+                "path": "src/html/nerd-mode.html",
+                "root": "../../"
+            }
+        },
+        "css": {
+            "index": {
+                "path": "index.css",
+                "root": "./"
+            },
+            "nerdMode": {
+                "path": "src/html/nerd-mode.css",
+                "root": "../../"
+            }
+        },
+        "js": {
+            "index": {
+                "path": "index.js",
+                "root": "./"    
+            },
+            "mapper": {
+                "path": "mapper.js",
+                "root": "./"
+            },
+            "nerdMode": {
+                "path": "src/html/nerd-mode.js",
+                "root": "../../"
+            }
+        }
+    },
+    "data": {
+        "json": {
+            "map": {
+                "path": "data/map.json",
+                "root": "./"
+            }
+        }
+    },
+    "media": {
+        "cursor": {
+            "cursor": {
+                "path": "media/cursor.png",
+                "root": "../"
+            },
+            "cursor3": {
+                "path": "media/cursor3.png",
+                "root": "../"
+            }
+        }
+    }
+}
