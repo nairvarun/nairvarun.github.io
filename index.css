@@ -5,12 +5,12 @@
 	width: 15px;
 }
   
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
 	background: rgba(153, 153, 76, 1);
 	border: 2px solid black;	
 }
   
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
 	background: rgba(255, 255, 234, 1);
 	border: 2px solid black;
 }
@@ -19,7 +19,8 @@
 	background: rgba(255, 255, 234, 1);
 }
 
-::-moz-selection { /* Code for Firefox */
+/* Code for Firefox */
+::-moz-selection {
 	background: rgba(238, 238, 158, 1);
 }
   
@@ -27,7 +28,6 @@
 	background: rgba(238, 238, 158, 1);
 }
 
-/* TODO: add better class and id names */
 html {
 	/* .cru??? */
 	cursor: url('./media/cursor3.png'), auto;
@@ -36,19 +36,17 @@ html {
 
 body {
 	min-height: 100vh;
-	/* font-family: 'Common Pixel', sans-serif; */
 	font-family: 'VT323', monospace;
 	font-size: 25px;
 	background-color: rgba(253, 255, 234, 1);    
 	margin: 0;
 	padding: 0;
-	/* overflow: hidden; */
 }
 
 a {
 	color: black;
-	cursor: url('./media/cursor3.png'), auto;
 	text-decoration: none;
+	cursor: url('./media/cursor3.png'), auto;
 }
 
 a:hover {
