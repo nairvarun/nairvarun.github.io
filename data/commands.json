@@ -1,0 +1,29 @@
+{
+    "home": {
+        "action": "window.location.href = '../../index.html'"
+    },
+    "back": {
+        "action": "history.go(-1)"
+    },
+    "gitlab": {
+        "action": "document.querySelector('#text-area').value += `https://gitlab.com/nairvarun\n`"
+    },
+    "github": {
+        "action": "document.querySelector('#text-area').value += `https://github.com/nairvarun\n`"
+    },
+    "linkedin": {
+        "action": "document.querySelector('#text-area').value += `https://www.linkedin.com/in/nair-varun\n`"
+    },
+    "twitter": {
+        "action": "document.querySelector('#text-area').value += `https://twitter.com/_nv04\n`"
+    },
+    "email": {
+        "action": "document.querySelector('#text-area').value += `nairvarun@pm.me\n`"
+    },
+    "instagram": {
+        "action": "document.querySelector('#text-area').value += `https://www.instagram.com/varunn104\n`"
+    },
+    "discord": {
+        "action": "document.querySelector('#text-area').value += `zucc#6607\n`"
+    }
+}
