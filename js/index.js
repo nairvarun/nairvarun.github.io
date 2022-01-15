@@ -31,7 +31,7 @@ window.addEventListener('contextmenu', (e) => {
 window.addEventListener('select', (e) => {
     const userInput = window.getSelection().toString();
     const cmd = command.default;
-    
+
     // console.log(userInput);
     // console.log(e.target.value);
     // console.log(e.target.id);

@@ -1,9 +1,15 @@
 {
     "close": {
-        "action": "document.querySelector('#term__text-area').style.display = 'none';"
+        "action": "document.querySelector('#term__text-area').style.visibility = '';"
     },
     "exit": {
-        "action": "document.querySelector('#term__text-area').style.display = 'none';"
+        "action": "document.querySelector('#term__text-area').style.visibility = '';"
+    },
+    "list": {
+        "action": "for (let i = 0; i < Object.keys(command.default).length; i++){document.querySelector(`#${e.target.id}`).value += `${(Object.keys(command.default)[i])}\n`}"   
+    },
+    "clear": {
+        "action": "document.querySelector(`#${e.target.id}`).value = ''"
     },
     "gitlab": {
         "action": "document.querySelector(`#${e.target.id}`).value += `https://gitlab.com/nairvarun\n`"
