@@ -1,29 +1,29 @@
 {
-    "home": {
-        "action": "window.location.href = '../../index.html'"
+    "close": {
+        "action": "document.querySelector('#term__text-area').style.display = 'none';"
     },
-    "back": {
-        "action": "history.go(-1)"
+    "exit": {
+        "action": "document.querySelector('#term__text-area').style.display = 'none';"
     },
     "gitlab": {
-        "action": "document.querySelector('#text-area').value += `https://gitlab.com/nairvarun\n`"
+        "action": "document.querySelector(`#${e.target.id}`).value += `https://gitlab.com/nairvarun\n`"
     },
     "github": {
-        "action": "document.querySelector('#text-area').value += `https://github.com/nairvarun\n`"
+        "action": "document.querySelector(`#${e.target.id}`).value += `https://github.com/nairvarun\n`"
     },
     "linkedin": {
-        "action": "document.querySelector('#text-area').value += `https://www.linkedin.com/in/nair-varun\n`"
+        "action": "document.querySelector(`#${e.target.id}`).value += `https://www.linkedin.com/in/nair-varun\n`"
     },
     "twitter": {
-        "action": "document.querySelector('#text-area').value += `https://twitter.com/_nv04\n`"
+        "action": "document.querySelector(`#${e.target.id}`).value += `https://twitter.com/_nv04\n`"
     },
     "email": {
-        "action": "document.querySelector('#text-area').value += `nairvarun@pm.me\n`"
+        "action": "document.querySelector(`#${e.target.id}`).value += `nairvarun@pm.me\n`"
     },
     "instagram": {
-        "action": "document.querySelector('#text-area').value += `https://www.instagram.com/varunn104\n`"
+        "action": "document.querySelector(`#${e.target.id}`).value += `https://www.instagram.com/varunn104\n`"
     },
     "discord": {
-        "action": "document.querySelector('#text-area').value += `zucc#6607\n`"
+        "action": "document.querySelector(`#${e.target.id}`).value += `zucc#6607\n`"
     }
 }
