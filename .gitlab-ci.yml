@@ -6,6 +6,7 @@ pages:
   script:
     - mkdir .public
     - cp -r * .public
+    - mv .public/html/* .public
     - rm -rf public
     - mv .public public
   artifacts:
