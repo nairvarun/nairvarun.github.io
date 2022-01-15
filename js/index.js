@@ -14,12 +14,11 @@ document.querySelector('#email-redirect').addEventListener('click', () => {
 
 // toggle term
 document.querySelector('#heading__box').addEventListener('click', () => {
-    // window.location.href = './src/html/plumber.html';
     let termStyle = document.querySelector('#term__text-area').style;
-    if (termStyle.display === '') {
-        termStyle.display = 'none';
-    } else if (termStyle.display === 'none') {
-        termStyle.display = '';
+    if (termStyle.visibility === '') {
+        termStyle.visibility = 'visible';
+    } else if (termStyle.visibility === 'visible') {
+        termStyle.visibility = '';
     }
 });
 
