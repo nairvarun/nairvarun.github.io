@@ -28,8 +28,9 @@ window.addEventListener('click', (eventClick) => {
     if (clickedOn.id !== 'term__text-area' && 
         clickedOn.className !== 'custom-cm' && 
         clickedOn.className !== 'custom-cm__item' && 
-        clickedOn.id !== 'heading__box') {
-        document.querySelector('#term__text-area').style.visibility = '';   
+        clickedOn.id !== 'heading__box' && 
+        window.getSelection().toString() == '') {
+            document.querySelector('#term__text-area').style.visibility = '';   
     }
 
     // custom context menu actions
