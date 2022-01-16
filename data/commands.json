@@ -1,35 +1,29 @@
 {
-    "close": {
-        "action": "document.querySelector('#term__text-area').style.visibility = '';"
-    },
-    "exit": {
-        "action": "document.querySelector('#term__text-area').style.visibility = '';"
-    },
     "list": {
-        "action": "for (let i = 0; i < Object.keys(command.default).length; i++){document.querySelector(`#${eventSelection.target.id}`).value += `${(Object.keys(command.default)[i])}\n`}"   
+        "execute": "for (let i = 0; i < Object.keys(cmd).length; i++) {outputArea.value += `${(Object.keys(cmd)[i])}\n`}"   
     },
     "clear": {
-        "action": "document.querySelector(`#${eventSelection.target.id}`).value = ''"
+        "execute": "outputArea.value = ''"
     },
     "gitlab": {
-        "action": "document.querySelector(`#${eventSelection.target.id}`).value += `https://gitlab.com/nairvarun\n`"
+        "execute": "if (window.confirm('open gitlab?')) {window.location.href = `mailto:${selection}`;}; outputArea.value += `https://gitlab.com/nairvarun\n`"
     },
     "github": {
-        "action": "document.querySelector(`#${eventSelection.target.id}`).value += `https://github.com/nairvarun\n`"
+        "execute": "outputArea.value += `https://github.com/nairvarun\n`"
     },
     "linkedin": {
-        "action": "document.querySelector(`#${eventSelection.target.id}`).value += `https://www.linkedin.com/in/nair-varun\n`"
+        "execute": "outputArea.value += `https://www.linkedin.com/in/nair-varun\n`"
     },
     "twitter": {
-        "action": "document.querySelector(`#${eventSelection.target.id}`).value += `https://twitter.com/_nv04\n`"
+        "execute": "outputArea.value += `https://twitter.com/_nv04\n`"
     },
     "email": {
-        "action": "document.querySelector(`#${eventSelection.target.id}`).value += `nairvarun@pm.me\n`"
+        "execute": "outputArea.value += `nairvarun@pm.me\n`"
     },
     "instagram": {
-        "action": "document.querySelector(`#${eventSelection.target.id}`).value += `https://www.instagram.com/varunn104\n`"
+        "execute": "outputArea.value += `https://www.instagram.com/varunn104\n`"
     },
     "discord": {
-        "action": "document.querySelector(`#${eventSelection.target.id}`).value += `zucc#6607\n`"
+        "execute": "outputArea.value += `zucc#6607\n`"
     }
 }
