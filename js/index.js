@@ -1,53 +1,139 @@
-const cmd = {
-    "list": {
-        "execute": 
-            "for (let i = 0; i < Object.keys(cmd).length; i++) {outputArea.value += `${(Object.keys(cmd)[i])}\n`}"   
-    },
-    "clear": {
-        "execute": 
-            "outputArea.value = ''"
-    },
-    "gitlab": {
-        "execute": 
-            "outputArea.value += `https://gitlab.com/nairvarun\n`;" +
-            "if (window.confirm('open gitlab?')) {window.open('https://gitlab.com/nairvarun', '_blank');}"
-    },
-    "github": {
-        "execute": 
-            "outputArea.value += `https://github.com/nairvarun\n`;" +
-            "if (window.confirm('open github?')) {window.open('https://github.com/nairvarun', '_blank');}"
-    },
-    "linkedin": {
-        "execute": 
-            "outputArea.value += `https://www.linkedin.com/in/nair-varun\n`;" +
-            "if (window.confirm('open linkedin?')) {window.open('https://www.linkedin.com/in/nair-varun', '_blank');}"
-    },
-    "twitter": {
-        "execute": 
-            "outputArea.value += `@_nv04\n`;" +
-            "if (window.confirm('open twitter?')) {window.open('https://twitter.com/_nv04', '_blank');}"
-    },
-    "email": {
-        "execute": 
-            "outputArea.value += `nairvarun@pm.me\n`;" + 
-            "if (window.confirm('open mail?')) {window.location.href = 'mailto:nairvarun@pm.me';}"
-    },
-    "instagram": {
-        "execute": 
-            "outputArea.value += `@varunn104\n`;" +
-            "if (window.confirm('open instagram?')) {window.open('https://www.instagram.com/varunn104', '_blank');}"
-    },
-    "discord": {
-        "execute": "outputArea.value += `zucc#6607\n`"
-    }
-}
-
 console.log(
     "%cheloo", 
     "font-size:25px;"
 );
 
-// all click event handlers
+document.querySelector('#primary-output').value = `gitlab\n\ngithub\n\nlinkedin\n\ntwitter\n\nemail\n\n`;
+
+// right now there is no need to have the 2 button's text as passable parameters. can add if needed.
+async function fireCustomAlert(message) {
+
+    const customAlertCss = document.querySelector('.custom-alert').style;
+    if (customAlertCss.visibility === '') {
+        document.querySelector('.custom-alert__message').textContent = message;
+        customAlertCss.visibility = 'visible';       
+    }
+
+    const returnVal = await buttonResponse();
+    customAlertCss.visibility = '';
+
+    return new Promise((resolve) => {
+        resolve(returnVal);
+    });
+}
+
+function buttonResponse(){
+    return new Promise((resolve) => {
+        document.querySelector('#custom-alert__button-confirm').addEventListener('click', () => {
+            resolve(true);
+        });
+        document.querySelector('#custom-alert__button-cancel').addEventListener('click', () => {
+            resolve(false);
+        });
+    });
+}    
+    
+function plumb(command) {
+
+    // might have to dynamically assign #primaryOutput if i decide to add ability to have more than one "acme" window at a time.
+    const primaryOutput = document.querySelector('#primary-output');
+
+    const clearSelection = () => {
+        if (window.getSelection().empty) {  // Chrome
+            window.getSelection().empty();
+        } else if (window.getSelection().removeAllRanges) {  // Firefox
+            window.getSelection().removeAllRanges();
+        }
+    }
+    
+    const openUlr = (alertMessage, urlToOpen, isEmail=false, printUrl=true) => {
+
+        const alertWrapper = async () => {
+            clearSelection();
+            const alertResult = await fireCustomAlert(alertMessage);
+            if (alertResult) {
+                if (isEmail) {
+                    window.location.href = `mailto:${urlToOpen}`;
+                } else {
+                    window.open(urlToOpen, '_blank');
+                }
+            }
+        }
+        alertWrapper();
+
+        if (printUrl) {
+            // makes sure outputs are printed on a new line.
+            if (primaryOutput.value.endsWith('\n') === false && primaryOutput.value !== '') {
+                primaryOutput.value += '\n';
+            }
+            primaryOutput.value += `${urlToOpen}\n`;
+        }
+
+    }
+
+    const urlRegex = /(?<![\S\s])https?:\/\/[a-zA-Z0-9]*\.?[a-zA-Z0-9_-]+\.[a-zA-z0-9]+[a-zA-Z0-9/_.-]*(?![\S\s])/;
+    const emailRegex = /(?<![\S\s])[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+.[a-zA-Z0-9_.-]+(?![\S\s])/;
+    const commandRegex = /(?<=case ')[a-z]+(?=':)/g;
+
+    if (urlRegex.test(command)) {
+
+        openUlr(`open ${command}?`, command, false, false);
+
+    } else if (emailRegex.test(command)) {
+
+        openUlr(`open mail to email ${command}?`, command, true, false);
+
+    } else {
+
+        switch (command) {
+            case 'list':
+                clearSelection();
+                if (primaryOutput.value.endsWith('\n') === false && primaryOutput.value !== '') {
+                    primaryOutput.value += '\n';
+                }
+                const matchedCommands = plumb.toString().match(commandRegex);
+                for (let i = 0; i < matchedCommands.length; i++) {
+                    // todo: print in alphabetical order
+                    primaryOutput.value += `${(matchedCommands[i])}\n`
+                }
+                break;
+            case 'clear':
+                clearSelection();
+                primaryOutput.value = '';
+                break;
+            case 'email':
+                openUlr('open mail to email nairvarun@pm.me?', 'nairvarun@pm.me', true, true);
+                break;
+            case 'gitlab':
+                openUlr('open gitlab?', 'https://gitlab.com/nairvarun');
+                break;
+            case 'github':
+                openUlr('open github?', 'https://github.com/nairvarun');
+                break;
+            case 'linkedin':
+                openUlr('open linkedin?', 'https://www.linkedin.com/in/nair-varun');
+                break;
+            case 'twitter':
+                openUlr('open twitter?', 'https://twitter.com/_nv04');
+                break;
+            case 'instagram':
+                openUlr('open instagram?', 'https://www.instagram.com/varunn104');
+                break;
+            case 'discord':
+                primaryOutput.value += 'zucc#6607\n';
+            case 'src':
+                openUlr('open https://gitlab.com/nairvarun/nairvarun.gitlab.io?', 'https://gitlab.com/nairvarun/nairvarun.gitlab.io');
+            case 'about':
+                // todo: write proper about
+                primaryOutput.value = 'heloo\n';
+            default:
+                break;
+        }
+
+    }
+}
+
+// all click event handlers.
 window.addEventListener('click', (MouseEvent) => {
     const contextMenuCss = document.querySelector('.custom-cm').style;
     const clickedOn = MouseEvent.target.innerText;
@@ -61,19 +147,19 @@ window.addEventListener('click', (MouseEvent) => {
     if (MouseEvent.target.className === 'custom-cm__item') {
         switch (clickedOn) {
             case 'list':
-                console.log('list');
+                plumb('list');
                 break;
             case 'clear':
-                console.log('clear')
+                plumb('clear')
                 break;
             case 'src':
-                console.log('src')
+                plumb('src')
                 break;
             case 'about':
-                console.log('about')
+                plumb('about')
                 break;
-            case 'contact':
-                console.log('contact')
+            case 'email':
+                plumb('email')
                 break;
             default:
                 break;
@@ -109,30 +195,6 @@ window.addEventListener('contextmenu', (MouseEvent) => {
 
 // plumber logic
 window.addEventListener('select', () => {
-    const outputArea = document.querySelector('#primary-output');
     const selection = window.getSelection().toString();
-
-    const urlRegex = /(?<![\S\s])https?:\/\/[a-zA-Z0-9]*\.?[a-zA-Z0-9_-]+\.[a-zA-z0-9]+[a-zA-Z0-9/_-]*(?![\S\s])/;
-    const emailRegex = /(?<![\S\s])[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+.[a-zA-Z0-9_.-]+(?![\S\s])/;
-
-    if (urlRegex.test(selection)) {
-        if (window.confirm(`open ${selection}?`)) {
-            window.open(`${selection}`, '_blank');
-        }
-    } else if (emailRegex.test(selection)) {
-        if (window.confirm('open mail?')) {
-            window.location.href = `mailto:${selection}`;
-        }
-    } else {
-        try {
-            if (cmd[selection].execute !== '') {
-                if (outputArea.value.endsWith("\n") === false && outputArea.value !== '') {
-                    outputArea.value += `\n`;
-                }        
-                eval(cmd[selection].execute);
-            }
-        } catch (error) {
-            // console.log(error.toString());
-        }
-    }
+    plumb(selection);
 });
