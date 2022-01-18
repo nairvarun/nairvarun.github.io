@@ -1,37 +1,38 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,  initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>varun</title>
-		<link rel="stylesheet" href="./css/index.css">
-	</head>
-	<body>
-		<div class="heading">
-			<h1 id="heading__box">&nbsp</h1>
-			<h1 id="heading__name">usr/varun-nair/</h1>
-		</div>
-		<br>
-		<div class="content">
-			<div class="content__link"><a href="https://gitlab.com/nairvarun">gitlab/</a></div>
-			<br>
-			<div class="content__link"><a href="https://github.com/nairvarun">github/</a></div>
-			<br>
-			<div class="content__link"><a href="https://www.linkedin.com/in/nair-varun">linkedin/</a></div>
-			<br>
-			<div class="content__link"><a href="https://twitter.com/_nv04">twitter/</a></div>
-			<br>
-			<!-- TODO: add custom dialog box for email -->
-			<div class="content__link"><a id="email-redirect">email/</a></div>
-		</div>
-		<div class="term">
-			<textarea id="term__text-area" spellcheck="false" autofocus="true" rows="17" cols="60"></textarea>
-		</div>
-		<div class="custom-cm">
-			<div class="custom-cm__item">term</div>
-			<div class="custom-cm__item">help</div>
-		</div>
-	</body>
-	<script type="module" src="./js/index.js"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>varun</title>
+</head>
+<body>
+    <div class="acme-container">
+        <div class="acme-titlebar">
+            <input class="acme-titlebar__title" type="text" spellcheck="false" value="usr/varun-nair/"/>
+        </div>
+        <div class="acme-menubar">
+            <input class="acme-menubar__menu" type="text" spellcheck="false" value="list clear src about email"/>
+        </div>
+        <div class="acme-editor">
+            <textarea class="acme-editor__text-area" id="primary-output" spellcheck="false">placeholder</textarea>
+        </div>
+    </div>
+    <div class="custom-cm">
+        <div class="custom-cm__item">list</div>
+        <div class="custom-cm__item">clear</div>
+        <div class="custom-cm__item">src</div>
+        <div class="custom-cm__item">about</div>
+        <div class="custom-cm__item">email</div>
+    </div>
+    <div class="custom-alert">
+        <div class="custom-alert__message">placeholder</div>
+        <div class="custom-alert__button-container">
+            <button class="custom-alert__button" id="custom-alert__button-confirm">confirm</button>
+            <button class="custom-alert__button" id="custom-alert__button-cancel">cancel</button>
+        </div>
+    </div>
+</body>
+<script type="module" src="./js/index.js"></script>
 </html>
