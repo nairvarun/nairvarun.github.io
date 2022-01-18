@@ -11,7 +11,7 @@ async function fireCustomAlert(message) {
     const customAlertCss = document.querySelector('.custom-alert').style;
     if (customAlertCss.visibility === '') {
         document.querySelector('.custom-alert__message').textContent = message;
-        customAlertCss.visibility = 'visible';       
+        customAlertCss.visibility = 'visible';
     }
 
     const returnVal = await buttonResponse();
@@ -94,7 +94,7 @@ function plumb(command) {
                 const matchedCommands = plumb.toString().match(commandRegex);
                 for (let i = 0; i < matchedCommands.length; i++) {
                     // todo: print in alphabetical order
-                    primaryOutput.value += `${(matchedCommands[i])}\n`
+                    primaryOutput.value += `${(matchedCommands[i])}\n`;
                 }
                 break;
             case 'clear':
@@ -121,11 +121,13 @@ function plumb(command) {
                 break;
             case 'discord':
                 primaryOutput.value += 'zucc#6607\n';
+                break;
             case 'src':
                 openUlr('open https://gitlab.com/nairvarun/nairvarun.gitlab.io?', 'https://gitlab.com/nairvarun/nairvarun.gitlab.io');
+                break;
             case 'about':
-                // todo: write proper about
                 primaryOutput.value = 'heloo\n';
+                break;
             default:
                 break;
         }
@@ -150,22 +152,22 @@ window.addEventListener('click', (MouseEvent) => {
                 plumb('list');
                 break;
             case 'clear':
-                plumb('clear')
+                plumb('clear');
                 break;
             case 'src':
-                plumb('src')
+                plumb('src');
                 break;
             case 'about':
-                plumb('about')
+                plumb('about');
                 break;
             case 'email':
-                plumb('email')
+                plumb('email');
                 break;
             default:
                 break;
         }
     }
-})
+});
 
 // show custom context menu (at cursor location) on right click
 window.addEventListener('contextmenu', (MouseEvent) => {
