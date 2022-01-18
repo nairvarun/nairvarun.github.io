@@ -85,15 +85,18 @@ function plumb(command) {
 
     } else {
 
+        const setLine = () => {
+            if (primaryOutput.value.endsWith('\n') === false && primaryOutput.value !== '') {
+            primaryOutput.value += '\n';
+            }
+        }
+
         switch (command) {
             case 'list':
                 clearSelection();
-                if (primaryOutput.value.endsWith('\n') === false && primaryOutput.value !== '') {
-                    primaryOutput.value += '\n';
-                }
+                setLine();
                 const matchedCommands = plumb.toString().match(commandRegex);
                 for (let i = 0; i < matchedCommands.length; i++) {
-                    // todo: print in alphabetical order
                     primaryOutput.value += `${(matchedCommands[i])}\n`;
                 }
                 break;
@@ -120,6 +123,7 @@ function plumb(command) {
                 openUlr('open instagram?', 'https://www.instagram.com/varunn104');
                 break;
             case 'discord':
+                setLine();
                 primaryOutput.value += 'zucc#6607\n';
                 break;
             case 'src':
