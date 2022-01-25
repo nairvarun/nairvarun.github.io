@@ -1,6 +1,19 @@
+::-webkit-scrollbar {
+	width:auto;
+}
+  
+::-webkit-scrollbar-track {
+	background-color: rgba(238,238,238, 1);
+}
+  
+::-webkit-scrollbar-thumb:active {
+	background-color: rgba(168, 168, 168, 1);
+}
+
 body {
     background-color: rgba(238,238,238, 1);
     padding: 2%;
+    overflow-y: scroll;    
 } 
 
 a {
@@ -18,16 +31,6 @@ details > summary {
 details[open] > summary {
     list-style-type: '- ';
 }
-/* 
-details {
-    border: 1px solid gray;
-    border-radius: 0.2rem;
-    padding: 0.5rem;
-}
-
-details[open] > summary {
-    margin-bottom: 0.5rem;
-} */
 
 #cowsay {
     font-size: 170%;
