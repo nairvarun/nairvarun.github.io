@@ -1,3 +1,4 @@
+// formatted console greeting
 console.log(
     "%cheloo", 
     "font-size:25px;"
@@ -199,7 +200,7 @@ window.addEventListener('contextmenu', (MouseEvent) => {
     }
 });
 
-// plumber logic
+// plumbs selection
 window.addEventListener('select', () => {
     const selection = window.getSelection().toString();
     plumb(selection);
