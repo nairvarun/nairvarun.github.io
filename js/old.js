@@ -1,6 +1,6 @@
 // formatted console greeting
 console.log(
-	"%cheloo", 
+	"%cheloo",
 	"font-size:25px;"
 );
 
@@ -32,8 +32,8 @@ function buttonResponse(){
 			resolve(false);
 		});
 	});
-}    
-	
+}
+
 function plumb(command) {
 
 	// might have to dynamically assign #primaryOutput if i decide to add ability to have more than one "acme" window at a time.
@@ -46,8 +46,8 @@ function plumb(command) {
 			window.getSelection().removeAllRanges();
 		}
 	}
-	
-	const openUlr = (alertMessage, urlToOpen, isEmail=false, printUrl=true) => {
+
+	const openUlr = (alertMessage, urlToOpen, isEmail = false, printUrl = true) => {
 
 		const alertWrapper = async () => {
 			clearSelection();
@@ -149,7 +149,7 @@ window.addEventListener('click', (MouseEvent) => {
 	if (contextMenuCss.visibility === 'visible') {
 		contextMenuCss.visibility = '';
 	}
-	
+
 	// custom context menu actions
 	if (MouseEvent.target.className === 'custom-cm__item') {
 		switch (clickedOn) {
@@ -176,14 +176,14 @@ window.addEventListener('click', (MouseEvent) => {
 
 // show custom context menu (at cursor location) on right click
 window.addEventListener('contextmenu', (MouseEvent) => {
-	MouseEvent.preventDefault();   // prevents the default context menu from showing so that our custom one can replace it. 
+	MouseEvent.preventDefault();   // prevents the default context menu from showing so that our custom one can replace it.
 
 	const contextMenu = document.querySelector('.custom-cm');
 
 	if (contextMenu.style.visibility === 'visible') {
 		contextMenu.style.visibility = '';
 	}
-	
+
 	// prevents the context menu from overflowing outside the window
 	if (contextMenu.style.visibility === '') {
 		if (MouseEvent.y + contextMenu.offsetHeight > window.innerHeight) {
