@@ -73,7 +73,7 @@ function plumb(command) {
     }
 
     const urlRegex = /(?<![\S\s])https?:\/\/[a-zA-Z0-9]*\.?[a-zA-Z0-9_-]+\.[a-zA-z0-9]+[a-zA-Z0-9/_.-]*(?![\S\s])/;
-    const emailRegex = /(?<![\S\s])[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+.[a-zA-Z0-9_.-]+(?![\S\s])/;
+    const emailRegex = /(?<![\S\s])[a-zA-Z0-9_.-]+@[a-zA-Z0-9_-]+.[a-zA-Z0-9_.-]+(?![\S\s])/;
     const commandRegex = /(?<=case ')[a-z]+(?=':)/g;
 
     if (urlRegex.test(command)) {
