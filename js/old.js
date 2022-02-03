@@ -209,7 +209,7 @@ window.addEventListener('select', () => {
 	// works on both chrome and firefox
 	textArea = document.activeElement;
 	selection = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
-	console.log(selection);
+	// console.log(selection);
 	
 	plumb(selection);
 });
