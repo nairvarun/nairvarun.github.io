@@ -202,6 +202,14 @@ window.addEventListener('contextmenu', (MouseEvent) => {
 
 // plumbs selection
 window.addEventListener('select', () => {
-	const selection = window.getSelection().toString();
+	// works on chrome but not on firefox
+	// const selection = window.getSelection().toString();
+	// console.log(selection);
+	
+	// works on both chrome and firefox
+	textArea = document.activeElement;
+	selection = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
+	console.log(selection);
+	
 	plumb(selection);
 });
