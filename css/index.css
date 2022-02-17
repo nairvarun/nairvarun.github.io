@@ -18,11 +18,15 @@ body {
 }
 
 a {
-	text-decoration: underline dotted;
+	text-decoration: none;
 }
 
 ul {
 	list-style-type: '> ';
+}
+
+.work_done {
+	list-style-type: '- ';
 }
 
 details > summary {
