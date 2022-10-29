@@ -4,7 +4,7 @@ console.log(
 	"font-size:25px;"
 );
 
-document.querySelector('#primary-output').value = `gitlab\n\ngithub\n\nlinkedin\n\ntwitter\n\nemail\n\n`;
+document.querySelector('#primary-output').value = `github\n\nlinkedin\n\nemail\n\n`;
 
 // right now there is no need to have the 2 button's text as passable parameters. can add if needed.
 async function fireCustomAlert(message) {
@@ -108,30 +108,31 @@ function plumb(command) {
 			case 'email':
 				openUlr('open mail to email nairvarun@pm.me?', 'nairvarun@pm.me', true, true);
 				break;
-			case 'gitlab':
-				openUlr('open gitlab?', 'https://gitlab.com/nairvarun');
-				break;
+			// case. to avaid matching with regex
+			// case. 'gitlab':
+			// 	openUlr('open gitlab?', 'https://gitlab.com/nairvarun');
+			// 	break;
 			case 'github':
 				openUlr('open github?', 'https://github.com/nairvarun');
 				break;
 			case 'linkedin':
 				openUlr('open linkedin?', 'https://www.linkedin.com/in/nair-varun');
 				break;
-			case 'twitter':
-				openUlr('open twitter?', 'https://twitter.com/_nv04');
-				break;
-			case 'instagram':
-				openUlr('open instagram?', 'https://www.instagram.com/varunn104');
-				break;
-			case 'discord':
-				setLine();
-				primaryOutput.value += 'zucc#6607\n';
-				break;
+			// case. 'twitter':
+			// 	openUlr('open twitter?', 'https://twitter.com/_nv04');
+			// 	break;
+			// case. 'instagram':
+			// 	openUlr('open instagram?', 'https://www.instagram.com/varunn104');
+			// 	break;
+			// case. 'discord':
+			// 	setLine();
+			// 	primaryOutput.value += 'zucc#6607\n';
+			// 	break;
 			case 'src':
-				openUlr('open https://gitlab.com/nairvarun/nairvarun.gitlab.io?', 'https://gitlab.com/nairvarun/nairvarun.gitlab.io');
+				openUlr('open https://github.com/nairvarun/nairvarun.github.io?', 'https://github.com/nairvarun/nairvarun.github.io');
 				break;
 			case 'about':
-				primaryOutput.value = 'heloo\n';
+				primaryOutput.value = 'https://nairvarun.github.io\n';
 				break;
 			default:
 				break;
@@ -205,11 +206,11 @@ window.addEventListener('select', () => {
 	// works on chrome but not on firefox
 	// const selection = window.getSelection().toString();
 	// console.log(selection);
-	
+
 	// works on both chrome and firefox
 	textArea = document.activeElement;
 	selection = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
 	// console.log(selection);
-	
+
 	plumb(selection);
 });

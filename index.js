@@ -1,4 +1,4 @@
 console.log(
-	"%cheloo", 
+	"%c🦄🐃",
 	"font-size:25px;"
 );

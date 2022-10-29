@@ -19,37 +19,43 @@ body {
 
 a {
 	text-decoration: none;
+	color: deeppink;
+	/* color: indigo; */
 }
 
 ul {
-	list-style-type: '> ';
-}
-
-.work_done {
 	list-style-type: '- ';
 }
 
 details > summary {
-	list-style-type: '+ ';
+	list-style-type: '? ';
 }
 
-details[open] > summary {
-	list-style-type: '- ';
-}
+/* details[open] > summary {
+	list-style-type: '? ';
+} */
 
 summary {
 	cursor: pointer;
+	font-size: 125%;
 }
 
-#cowsay {
-	font-size: 170%;
+#name {
+	font-size: 300%;
+	font-family: monospace;
 }
 
-#old-site-link {
-	text-decoration: none;
+#links {
+	font-size: 110%;
+	font-family: monospace;
+	padding-left: 8px;
 }
 
 #info {
 	font-size: 140%;
 	font-family: monospace;
+}
+
+#old-site-link {
+	text-decoration: none;
 }
