@@ -1,5 +1,5 @@
 ::-webkit-scrollbar {
-	width:auto;
+	width: auto;
 }
 
 ::-webkit-scrollbar-track {
@@ -11,7 +11,7 @@
 }
 
 body {
-	background-color: rgba(238 ,238, 238, 1);
+	background-color: rgba(238, 238, 238, 1);
 	padding: 2%;
 	overflow-y: scroll;
 	cursor: default;
@@ -27,7 +27,7 @@ ul {
 	list-style-type: '- ';
 }
 
-details > summary {
+details>summary {
 	list-style-type: '? ';
 }
 
