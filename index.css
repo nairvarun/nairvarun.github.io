@@ -3,31 +3,46 @@
 }
 
 ::-webkit-scrollbar-track {
-	background-color: rgba(238, 238, 238, 1);
+	background-color: white;
 }
 
 ::-webkit-scrollbar-thumb:active {
-	background-color: rgba(168, 168, 168, 1);
+	background-color: white;
+}
+
+::selection {
+	color: white;
+	background: black;
 }
 
 body {
-	background-color: rgba(238, 238, 238, 1);
-	padding: 2%;
+	background-color: white;
+	padding: 1%;
 	overflow-y: scroll;
+	font-family: monospace;
 	cursor: default;
 }
 
 a {
 	text-decoration: none;
-	color: deeppink;
+	color: black;
+}
+
+a:hover {
+	color: blue;
 }
 
 ul {
-	list-style-type: '- ';
+	list-style-type: '├── ';
+	margin-top: 2px;
+}
+
+li:last-child {
+	list-style-type: '└── ';
 }
 
 details>summary {
-	list-style-type: '? ';
+	list-style-type: '';
 }
 
 summary {
@@ -36,21 +51,18 @@ summary {
 }
 
 #name {
-	font-size: 300%;
-	font-family: monospace;
+	font-size: 400%;
 }
 
 #links {
 	font-size: 110%;
-	font-family: monospace;
 	padding-left: 8px;
 }
 
 #info {
-	font-size: 140%;
-	font-family: monospace;
+	font-size: 130%;
 }
 
-#old-site-link {
-	text-decoration: none;
+.work_in_progress {
+	cursor: not-allowed;
 }
