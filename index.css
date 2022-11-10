@@ -46,7 +46,7 @@ details>summary {
 }
 
 summary {
-	cursor: pointer;
+	/* cursor: pointer; */
 	font-size: 125%;
 }
 
