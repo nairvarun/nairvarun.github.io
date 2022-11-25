@@ -21,6 +21,8 @@ body {
 	overflow-y: scroll;
 	font-family: monospace;
 	cursor: default;
+	/* margin: auto; */
+	/* max-width: 50em; */
 }
 
 a {
