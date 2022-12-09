@@ -7,12 +7,13 @@
 }
 
 ::-webkit-scrollbar-thumb:active {
-	background-color: white;
+	background-color: blue;
+	border: solid black;
 }
 
 ::selection {
 	color: white;
-	background: black;
+	background: blue;
 }
 
 body {
@@ -21,34 +22,33 @@ body {
 	overflow-y: scroll;
 	font-family: monospace;
 	cursor: default;
-	/* margin: auto; */
-	/* max-width: 50em; */
 }
 
 a {
 	text-decoration: none;
-	color: black;
+	color: blue;
+	cursor: default;
 }
 
 a:hover {
-	color: blue;
+	color: white;
+	background-color: blue;
 }
 
 ul {
-	list-style-type: '├── ';
-	margin-top: 2px;
-}
-
-li:last-child {
-	list-style-type: '└── ';
+	list-style: '- ';
 }
 
 details>summary {
-	list-style-type: '';
+	list-style: ':';
 }
 
+details[open]>summary {
+	list-style: '.';
+}
+
+
 summary {
-	/* cursor: pointer; */
 	font-size: 125%;
 }
 
@@ -57,7 +57,7 @@ summary {
 }
 
 #links {
-	font-size: 110%;
+	font-size: 100%;
 	padding-left: 8px;
 }
 
