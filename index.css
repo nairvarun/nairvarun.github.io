@@ -34,6 +34,7 @@
 body {
     font-family: "Roboto Mono", monospace;
     -webkit-font-smoothing: antialiased;
+    font-size: large;
     background: var(--nord6);
     color: var(--nord0);
     cursor: default;
