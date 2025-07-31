@@ -1,1 +1,1 @@
-# [nairvarun.xyz](https://nairvarun.xyz)
+# [nairvarun.com](https://nairvarun.com)
